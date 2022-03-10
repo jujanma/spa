@@ -1,0 +1,30 @@
+<h1>Heroes <small>Marvel y DC</small></h1>
+<hr>
+<!--
+<div class="card-group">
+    <div class="card" *ngFor="let heroe of heroes">
+        <img [src]="heroe.img" class=" card-img-top img-fluid" alt="Card image cap">
+        <div class="card-block ">
+            <h5 class="card-title ">Card title</h5>
+            <p class="card-text ">This card has supporting text below as a natural lead-in to additional content.</p>
+
+        </div>
+        <div class="card-footer ">
+            <small class="text-muted ">Last updated 3 mins ago</small>
+        </div>
+        <button type="button" class="btn btn-outline-primary btn-block">Ver más</button>
+    </div>
+
+</div>-->
+<div class="col">
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i=index">
+        <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+        <div class="card-block">
+            <h5 class="card-title">{{heroe.nombre}}</h5>
+            <p class="card-text">{{heroe.bio}}</p>
+            Gonorrea
+        </div>
+        <button (click)="verHeroe(i)" type=" button " class="btn btn-outline-primary btn-block ">Ver más</button>
+        <a [routerLink]="[ '/heroe', i] " class="btn btn-outline-primary ">Ver más</a>
+
+    </div>
